@@ -15,10 +15,10 @@ public:
  */
 class SmartTestScheduleData {
 public:
-    int type;				//!< 1->Monthly, 2->Weekly, 3->Daily
+    int type;				//!< 1 is Monthly, 2 is Weekly, 3 is Daily
     int hour;           	//!< 0~24
     int minute;          	//!< 0~59
-    int weekly;            	//!< 0~6, 0->Sunday
+    int weekly;            	//!< 0~6, 0 is Sunday.
 };
 
 //! class DiskInfo.

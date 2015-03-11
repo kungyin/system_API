@@ -40,8 +40,9 @@ public:
     /**
      * Constructs DiskVol.
      * Initialize m_pData.
+     * @param volume specific volume number.
      */
-	DiskVol();
+	DiskVol(int volume);
 
     /**
      * Destory DiskInfo.
@@ -89,7 +90,7 @@ public:
     /**
      * Get disk volume data by specific volume number.
      * @param data store disk volume data.
-     * @param devnode specific volume number.
+     * @param volume specific volume number.
      * @return Returns 1 if success. Return 0 if fail.
      */
     int getDiskVolume(DiskVolData &data, int volume);
