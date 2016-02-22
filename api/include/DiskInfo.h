@@ -58,6 +58,21 @@ public:
 //     */
 //    static int getDiskFMTProgress(int &percent int &describe, int &errcode);
 
+    //! The static function will get which disk node.
+    /**
+     * @return devnode specific device node. /dev/sda is 0.
+     */
+    static int getSmartTestDisk();
+
+    //! The static function will get current S.M.A.R.T test progress.
+    /**
+     * @param devnode specific device node.
+     * @param progress store S.M.A.R.T progress.
+     * @param result store time of test finish (time_t). If test is not finished, -1 will be returned.
+     * @return Returns 1 if success. Return 0 if fail.
+     */
+    static int getSmartTestList(std::string devnode, int &progress, unsigned int &result);
+
     //! The static function will create S.M.A.R.T test list and send mail.
     /**
      * @param smartmail ?.
@@ -91,7 +106,8 @@ public:
      * @param devnode specific device node. /dev/sda is 0.
      * @return Returns 1 if success. Return 0 if fail.
      */
-    static int setStartSmartTest(int devnode);
+    static int setStartSmartTest(int devnode, );
+    /* FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF */
 
     //! The static function will get S.M.A.R.T test status.
     /**
@@ -100,19 +116,27 @@ public:
      */
     static int getSmartTestStatus(int devnode);
 
-    //! The static function will set disk scan.
+    //! The static function will set disk scan for start
     /**
      * @param devnode specific device node. /dev/sda is 0.
      * @return Returns 1 if success. Return 0 if fail.
      */
     static int setDiskScan(int devnode);
+    /********************* string ******************/
 
-    //! The static function will set disk scan finish.
+    //! The static function will get disk mount status.
     /**
-     * @param devnode specific device node. /dev/sda is 0.
+     * @param devnode specific device node.
      * @return Returns 1 if success. Return 0 if fail.
      */
-    static int setDiskScanFinish(int devnode);
+    static int getDiskMountStatus(std::string devnode);
+
+//    //! The static function will set disk scan finish.
+//    /**
+//     * @param devnode specific device node. /dev/sda is 0.
+//     * @return Returns 1 if success. Return 0 if fail.
+//     */
+//    static int setDiskScanFinish(int devnode);
 
     //! The function will get disk info data.
     /**
